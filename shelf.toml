@@ -1,0 +1,5 @@
+name = "offlinepoly"
+version = "0.1.0"
+description = "Learning-free offline 3D multi-object tracking (Offline-Poly / Tracking-By-Tracking) for 4D auto-labeling"
+tags = ["autolabeling", "tracking", "mot", "lidar", "offline"]
+tins = []
