@@ -1,5 +1,7 @@
 # OfflinePoly.mojo
 
+[![mojoshelf](https://mojoshelf.org/badge/offlinepoly.svg)](https://mojoshelf.org/tins/offlinepoly) [![mojo nightly](https://mojoshelf.org/badge/offlinepoly/nightly.svg)](https://mojoshelf.org/tins/offlinepoly)
+
 A pure-[Mojo](https://www.modular.com/mojo), learning-free implementation of
 **Offline-Poly** ([arXiv:2602.13772](https://arxiv.org/abs/2602.13772), Li et
 al. 2026): offline 3D multi-object tracking under the **Tracking-By-Tracking
@@ -52,6 +54,18 @@ Four stages, mirroring the paper (Fig. 2):
   Levenberg-Marquardt — under CV the problem is linear, so the update is
   identical.
 - Heading fusion uses a circular weighted mean without 180° flip handling.
+
+## Install as a mojoshelf tin
+
+Published on [mojoshelf](https://mojoshelf.org/tins/offlinepoly) as `offlinepoly`:
+
+```sh
+pixi shelf add offlinepoly     # pixi mode (git source dependency)
+shelf add offlinepoly          # or as a git submodule
+```
+
+Maintainers release new versions with `shelf publish` from the repo root
+(see [getting started](https://mojoshelf.org/getting-started)).
 
 ## Usage
 
