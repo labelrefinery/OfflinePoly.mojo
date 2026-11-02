@@ -3,12 +3,12 @@ authors = ["Marius S <39998+winding-lines@users.noreply.github.com>"]
 channels = ["https://conda.modular.com/max-nightly", "conda-forge"]
 name = "OfflinePoly.mojo"
 platforms = ["osx-arm64", "linux-64"]
-version = "0.1.0"
+version = "0.2.0"
 preview = ["pixi-build"]
 
 [package]
 name = "offlinepoly"
-version = "0.1.0"
+version = "0.2.0"
 
 [package.build]
 backend = { name = "pixi-build-mojo", version = "0.*" }
@@ -21,23 +21,23 @@ name = "offlinepoly"
 # packaged build pins stable; the source itself also compiles on nightly
 # (see [environments] and CI).
 [package.host-dependencies]
-mojo-compiler = "==1.0.0"
+mojo-compiler = "==1.2.0"
 
 [package.build-dependencies]
-mojo-compiler = "==1.0.0"
+mojo-compiler = "==1.2.0"
 
 [package.run-dependencies]
-mojo-compiler = ">=1.0.0,<2"
+mojo-compiler = ">=1.2.0,<2"
 
 [tasks]
 test = "mojo run -I src tests/test_offlinepoly.mojo"
 demo = "mojo run -I src src/main.mojo examples/refined.csv examples/tracker_a.csv examples/tracker_b.csv"
 
 [feature.nightly.dependencies]
-modular = ">=26.6.0.dev2026082605,<27"
+modular = ">=26.8.0.dev2026102305,<27"
 
 [feature.stable.dependencies]
-mojo-compiler = "==1.0.0"
+mojo-compiler = "==1.2.0"
 
 [environments]
 default = ["nightly"]

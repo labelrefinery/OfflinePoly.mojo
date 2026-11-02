@@ -185,17 +185,16 @@ def assign_frames(
 
 
 def write_tracker_csv(path: String, tracklets: List[Tracklet]) raises:
-    var f = open(path, "w")
-    f.write("track_id,cls,t,x,y,z,w,l,h,vx,vy,theta,conf\n")
-    for tr in tracklets:
-        for s in tr.states:
-            var row = String()
-            row.write(
-                tr.tid, ",", tr.cls, ",", s.t, ",",
-                s.x, ",", s.y, ",", s.z, ",",
-                s.w, ",", s.l, ",", s.h, ",",
-                s.vx, ",", s.vy, ",", s.theta, ",",
-                s.conf, "\n",
-            )
-            f.write(row)
-    f.close()
+    with open(path, "w") as f:
+        f.write("track_id,cls,t,x,y,z,w,l,h,vx,vy,theta,conf\n")
+        for tr in tracklets:
+            for s in tr.states:
+                var row = String()
+                row.write(
+                    tr.tid, ",", tr.cls, ",", s.t, ",",
+                    s.x, ",", s.y, ",", s.z, ",",
+                    s.w, ",", s.l, ",", s.h, ",",
+                    s.vx, ",", s.vy, ",", s.theta, ",",
+                    s.conf, "\n",
+                )
+                f.write(row)
